@@ -1182,6 +1182,104 @@ body:not(.dark-mode) .admin-driver-form h3 {
    Mobile & Android Responsive Enhancements
 ------------------------------------------------------------- */
 @media (max-width: 600px) {
+  /* Floating Glassmorphic Navbar on Android */
+  .navbar {
+    top: 10px !important;
+    width: calc(100% - 20px) !important;
+    border-radius: 24px !important;
+    padding: 8px 0 !important;
+  }
+  .navbar-inner {
+    padding: 0 16px !important;
+  }
+  .brand {
+    font-size: 20px !important;
+  }
+  .nav-links.open {
+    top: calc(100% + 8px) !important;
+    padding: 16px !important;
+    border-radius: 16px !important;
+    gap: 12px !important;
+  }
+  .nav-links.open a, 
+  .nav-links.open button {
+    width: 100%;
+    text-align: center;
+    padding: 8px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 0 !important;
+  }
+  .nav-links.open .logout-btn {
+    border-bottom: none;
+    background: rgba(251, 146, 60, 0.9) !important;
+  }
+  body:not(.dark-mode) .nav-links.open a {
+    border-bottom-color: #cbd5e1;
+  }
+
+  /* Hero & Tagline responsive tweaks */
+  .hero {
+    padding: 40px 16px !important;
+    margin-bottom: 20px !important;
+    border-radius: 16px !important;
+  }
+  .hero h1 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+  }
+  .hero p {
+    font-size: 14px !important;
+    margin-bottom: 24px !important;
+  }
+  .tagline {
+    font-size: 11px !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  /* Features section refinements */
+  .features {
+    gap: 16px !important;
+    margin-bottom: 24px !important;
+  }
+  .features article {
+    padding: 20px !important;
+    border-radius: 16px !important;
+  }
+  .features h3 {
+    font-size: 16px !important;
+  }
+  .features p {
+    font-size: 13px !important;
+  }
+  .feature-icon {
+    font-size: 36px !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Booking, Login & Sign-Up Forms */
+  .booking-card.login-card {
+    width: 100% !important;
+    padding: 20px 16px !important;
+  }
+  .booking-form {
+    gap: 12px !important;
+  }
+  .booking-form label {
+    font-size: 13px !important;
+    gap: 6px !important;
+  }
+  .booking-form input, 
+  .booking-form select {
+    padding: 10px 12px !important;
+    font-size: 16px !important; /* Prevents auto-zoom while maintaining readability */
+    border-radius: 8px !important;
+  }
+  .booking-form .primary-btn.form-btn {
+    height: 46px !important;
+    font-size: 14px !important;
+    margin-top: 10px !important;
+  }
+
   /* Layout Padding Adjustments */
   .main-content {
     padding: var(--space-16) var(--space-8);

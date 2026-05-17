@@ -1104,7 +1104,7 @@ function DriverDashboard({ isDriver, driverId, showToast }) {
 
                 {/* Driver Actions */}
                 {booking.status !== 'Completed' && (
-                  <div style={{ display: 'flex', gap: '1rem', marginTop: '1.2rem' }}>
+                  <div className="booking-action-buttons" style={{ display: 'flex', gap: '1rem', marginTop: '1.2rem' }}>
                     <button 
                       className="primary-btn form-btn complete-ride-btn" 
                       style={{ flex: 1, background: 'linear-gradient(135deg, #2563eb, #3b82f6)' }} 
