@@ -1,0 +1,1180 @@
+:root {
+  --primary: #7c3aed;
+  --primary-dark: #6d28d9;
+  --accent: #fb923c;
+  --accent-hover: #f97316;
+  --bg-main: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --error: #ef4444;
+  --success: #10b981;
+  --radius: 12px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+h1 { font-size: 36px; font-weight: 800; }
+h2 { font-size: 28px; font-weight: 700; }
+h3 { font-size: 20px; font-weight: 600; }
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  position: sticky;
+  top: 16px;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  padding: 12px 0;
+  border-radius: 50px;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 48px);
+}
+
+.navbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-24);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-24);
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.logout-btn {
+  background: rgba(251, 146, 60, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white !important;
+  padding: 8px 24px;
+  border-radius: 100px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(251, 146, 60, 0.3);
+}
+
+.logout-btn:hover {
+  background: rgba(249, 115, 22, 0.9);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(251, 146, 60, 0.4);
+}
+
+.main-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--space-32) var(--space-24);
+  width: 100%;
+  flex: 1;
+}
+
+.hero {
+  position: relative;
+  background: linear-gradient(to bottom right, rgba(5, 0, 20, 0.7), rgba(5, 0, 20, 0.2)), url('/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+  padding: 100px var(--space-32);
+  color: white;
+  text-align: center;
+  margin-bottom: var(--space-32);
+  animation: fadeIn 1s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.hero h1 {
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero p {
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.hero h1 {
+  margin-bottom: var(--space-16);
+}
+
+.hero p {
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 0.9;
+  margin-bottom: var(--space-32);
+}
+
+.primary-btn {
+  background: rgba(124, 58, 237, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+}
+
+.primary-btn:hover {
+  background: rgba(109, 40, 217, 0.85);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-24);
+  margin-bottom: var(--space-32);
+}
+
+.features article {
+  background: white;
+  padding: var(--space-32);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.features article:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.features h3 {
+  margin-bottom: var(--space-8);
+  color: var(--primary);
+}
+
+.booking-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: var(--space-32);
+  box-shadow: var(--shadow-lg);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.booking-form {
+  display: grid;
+  gap: var(--space-16);
+  margin-top: var(--space-16);
+}
+
+.booking-form label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.booking-form input {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.booking-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.2);
+}
+
+.booking-item {
+  background: white;
+  border-radius: var(--radius);
+  padding: var(--space-24);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-16);
+}
+
+.booking-item:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.status-pill {
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status-pill.ongoing { background: #e0e7ff; color: #4338ca; }
+.status-pill.dropped { background: #d1fae5; color: #065f46; }
+
+.form-error {
+  color: var(--error);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 16px 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: slideIn 0.3s ease-out;
+}
+
+.toast.success { border-left: 4px solid var(--success); }
+.toast.error { border-left: 4px solid var(--error); }
+
+.feature-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.driver-info-card {
+  margin-top: 16px;
+  padding: 16px;
+  background: #f0fdf4;
+  border-radius: 12px;
+  border: 1px solid #bcf0da;
+  color: #064e3b; /* Force dark green text for readability on light background */
+}
+
+.driver-info-card strong {
+  color: #065f46;
+}
+
+body.dark-mode .driver-info-card {
+  background: #064e3b; /* In dark mode, make the card background dark green */
+  color: #ecfdf5; /* And make the text light */
+  border-color: #065f46;
+}
+
+body.dark-mode .driver-info-card strong {
+  color: #34d399;
+}
+
+.card-3d {
+  background: white;
+  border: 1px solid #e2e8f0;
+}
+
+.card-3d:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: var(--shadow-lg);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+}
+
+.admin-table tr:nth-child(even) { background: #f8fafc; }
+.admin-table tr:hover { background: #f1f5f9; }
+.admin-table th, .admin-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.admin-driver-info {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary);
+}
+
+body.dark-mode .admin-driver-info {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.driver-highlight {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.phone-highlight {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+body.dark-mode {
+  --bg-main: #050014;
+  --card-bg: #1e293b;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  background-color: var(--bg-main);
+}
+
+body.dark-mode .booking-card, body.dark-mode .features article, body.dark-mode .booking-item {
+  background: rgba(30, 41, 59, 0.45);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  border-radius: 24px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+body.dark-mode .booking-card:hover, body.dark-mode .features article:hover, body.dark-mode .booking-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.25);
+}
+
+body.dark-mode .booking-form input, body.dark-mode .booking-form select, body.dark-mode .booking-form textarea {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .booking-form input:focus, body.dark-mode .booking-form select:focus, body.dark-mode .booking-form textarea:focus {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.5), 0 0 0 3px rgba(255,255,255,0.1);
+}
+
+body.dark-mode .navbar {
+  background: rgba(15, 23, 42, 0.65);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  color: var(--text-main);
+}
+
+body.dark-mode .nav-links.open {
+  background: rgba(15, 23, 42, 0.95); /* More opaque to stop text overlap */
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  color: var(--text-main);
+  z-index: 9999;
+}
+
+
+.stat-bar {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 100px;
+  margin: 12px 0;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 100px;
+}
+
+@media (max-width: 768px) {
+  .features { grid-template-columns: 1fr; }
+  .nav-links {
+    display: none;
+  }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 16px);
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: var(--space-24);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
+    z-index: 9999;
+  }
+  .menu-toggle { display: block; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 32px; }
+  .hero { padding: 60px var(--space-16); }
+  .booking-card { padding: var(--space-24); }
+}
+
+.speed-rays-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background-color: transparent;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+body.dark-mode .speed-rays-container {
+  opacity: 1;
+}
+
+.speed-ray {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  border-radius: 50%;
+  animation: moveRay linear infinite;
+  transform: translateX(-100%);
+  z-index: 5;
+  will-change: transform;
+}
+
+@keyframes moveRay {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+}
+
+/* -------------------------------------------------------------
+   Admin Booking Card & Custom Driver Assignment Styles
+------------------------------------------------------------- */
+
+/* High-fidelity Admin Booking Card */
+.admin-booking-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: visible !important; /* Ensure dropdown doesn't get cut off */
+}
+
+.admin-booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.passenger-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.passenger-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), #ec4899);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
+}
+
+.passenger-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.passenger-email {
+  font-size: 12px;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 2px;
+}
+
+/* Status Pill Custom Colors */
+.status-pill {
+  padding: 6px 12px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.status-pill.completed {
+  background: rgba(16, 185, 129, 0.15) !important;
+  color: #10b981 !important;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.status-pill.ongoing {
+  background: rgba(59, 130, 246, 0.15) !important;
+  color: #3b82f6 !important;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.status-pill.pending {
+  background: rgba(251, 146, 60, 0.15) !important;
+  color: #fb923c !important;
+  border: 1px solid rgba(251, 146, 60, 0.3);
+}
+
+.status-pill.cancelled {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Visual Route indicator */
+.admin-booking-route {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+body:not(.dark-mode) .admin-booking-route {
+  background: #f8fafc;
+  border-color: #f1f5f9;
+}
+
+.route-stop {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.route-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.route-dot.start {
+  background: #a78bfa;
+  box-shadow: 0 0 8px #a78bfa;
+}
+
+.route-dot.end {
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.route-line-connector {
+  position: absolute;
+  left: 20px;
+  top: 22px;
+  bottom: 22px;
+  width: 2px;
+  background: linear-gradient(to bottom, #a78bfa, var(--accent));
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.route-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.route-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.route-text {
+  font-size: 13px;
+  color: var(--text-main);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* Completion checklists */
+.admin-booking-checklists {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.checklist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.checklist-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.checklist-badges {
+  display: flex;
+  gap: 8px;
+}
+
+.completion-badge {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.completion-badge.checked {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.completion-badge.pending {
+  background: rgba(148, 163, 184, 0.1);
+  color: var(--text-muted);
+}
+
+/* Assigned / Unassigned Driver Cards */
+.admin-driver-assigned-card {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px dashed rgba(16, 185, 129, 0.3);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-top: 4px;
+}
+
+body:not(.dark-mode) .admin-driver-assigned-card {
+  background: #f0fdf4;
+}
+
+.driver-visual-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.driver-avatar-mini {
+  font-size: 20px;
+  background: rgba(16, 185, 129, 0.15);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.driver-assigned-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #10b981;
+  letter-spacing: 0.05em;
+}
+
+.driver-assigned-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-top: 1px;
+}
+
+.driver-assigned-phone {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 1px;
+}
+
+.admin-driver-unassigned-card {
+  background: rgba(251, 146, 60, 0.08);
+  border: 1px dashed rgba(251, 146, 60, 0.3);
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+body:not(.dark-mode) .admin-driver-unassigned-card {
+  background: #fffbeb;
+}
+
+.unassigned-icon {
+  font-size: 16px;
+}
+
+/* Custom Dropdown Styles */
+.driver-assign-container {
+  position: relative;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.driver-assign-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  color: var(--text-main);
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+body.dark-mode .driver-assign-trigger {
+  background: rgba(124, 58, 237, 0.12);
+  border-color: rgba(124, 58, 237, 0.25);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.driver-assign-trigger:hover, 
+.driver-assign-trigger.active {
+  background: rgba(124, 58, 237, 0.16);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(124, 58, 237, 0.2);
+}
+
+.driver-assign-trigger .chevron {
+  transition: transform 0.3s ease;
+  color: var(--primary);
+}
+
+.driver-assign-trigger.active .chevron {
+  transform: rotate(180deg);
+}
+
+.driver-assign-dropdown {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  top: auto;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 14px;
+  box-shadow: var(--shadow-lg), 0 -10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  z-index: 999; /* Higher priority to float over adjacent elements */
+  overflow: hidden;
+  animation: slideUp 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+body.dark-mode .driver-assign-dropdown {
+  background: rgba(26, 31, 46, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+.driver-assign-dropdown .dropdown-header {
+  padding: 10px 14px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid #f1f5f9;
+  letter-spacing: 0.05em;
+  background: #f8fafc;
+}
+
+body.dark-mode .driver-assign-dropdown .dropdown-header {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.driver-assign-dropdown .dropdown-options {
+  overflow-y: auto;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dropdown-option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--text-main);
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+.dropdown-option:hover {
+  background: #f1f5f9;
+}
+
+body.dark-mode .dropdown-option:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dropdown-option.selected {
+  background: rgba(124, 58, 237, 0.08);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+body.dark-mode .dropdown-option.selected {
+  background: rgba(124, 58, 237, 0.18);
+}
+
+.dropdown-option .option-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dropdown-option .option-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.dropdown-option .option-details {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------------------------------------------------
+   Admin Users, Drivers, and Booking Actions High-Fidelity Styles
+------------------------------------------------------------- */
+
+/* Unified Glassmorphic User & Driver Card Row */
+.admin-user-row-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body:not(.dark-mode) .admin-user-row-card {
+  background: white;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.admin-user-row-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(124, 58, 237, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.1);
+}
+
+body:not(.dark-mode) .admin-user-row-card:hover {
+  background: #f8fafc;
+  border-color: var(--primary);
+}
+
+.user-profile-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.user-avatar-icon {
+  background: linear-gradient(135deg, var(--primary), #3b82f6) !important;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.25) !important;
+}
+
+.user-text-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.user-email-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+  word-break: break-all;
+}
+
+.user-role-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Beautiful Action Buttons inside Rows */
+.delete-user-row-btn {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border-radius: 10px;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.delete-user-row-btn:hover {
+  background: #ef4444;
+  color: white;
+  border-color: #ef4444;
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.edit-driver-row-btn:hover {
+  background: rgba(59, 130, 246, 0.2) !important;
+  transform: translateY(-1px);
+}
+
+/* Redesigned Premium Buttons inside Cards */
+.complete-ride-btn {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  color: white !important;
+  font-weight: 700 !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 12px 20px !important;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.complete-ride-btn:hover:not(:disabled) {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45) !important;
+  filter: brightness(1.1);
+}
+
+.complete-ride-btn:disabled {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: var(--text-muted) !important;
+  box-shadow: none !important;
+  cursor: not-allowed;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.cancel-ride-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+  color: white !important;
+  font-weight: 700 !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 12px 20px !important;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.3) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.cancel-ride-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.45) !important;
+  filter: brightness(1.1);
+}
+
+/* Glassmorphic input field specifically for datetime picker */
+.booking-form input[type="datetime-local"] {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  width: 100%;
+}
+
+body:not(.dark-mode) .booking-form input[type="datetime-local"] {
+  background: white;
+  border-color: #cbd5e1;
+}
+
+.booking-form input[type="datetime-local"]:focus {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.25);
+  outline: none;
+}
+
+/* Style datetime picker calendar icon color */
+.booking-form input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.8) sepia(50%) saturate(1000%) hue-rotate(220deg);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+body:not(.dark-mode) .booking-form input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: none;
+}
+
+.booking-form input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Driver Addition & Edit Forms */
+.admin-driver-form {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+body:not(.dark-mode) .admin-driver-form {
+  background: white;
+  border-color: #e2e8f0;
+}
+
+.admin-driver-form h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-main);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  padding-bottom: 8px;
+}
+
+body:not(.dark-mode) .admin-driver-form h3 {
+  border-bottom-color: #f1f5f9;
+}
+
