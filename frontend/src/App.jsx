@@ -413,9 +413,8 @@ function MyBookingPage({ isLoggedIn, userEmail, showToast }) {
           </div>
         </div>
 
-        {/* Complete / Cancel Action Buttons */}
         {(!booking.isDropped && new Date(booking.dateTime) >= now) && (
-          <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem' }}>
+          <div className="booking-action-buttons" style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem' }}>
             <button
               className="primary-btn form-btn complete-ride-btn"
               onClick={() => handleCompleteRide(booking._id)}
@@ -788,7 +787,7 @@ function AdminDashboard({ isAdmin, showToast }) {
     <section className="booking-card admin-card" style={{ maxWidth: '1000px' }}>
       <h1>Admin Dashboard</h1>
       
-      <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
+      <div className="admin-tabs" style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
         <button className={`primary-btn ${activeTab === 'bookings' ? '' : 'outline'}`} onClick={() => setActiveTab('bookings')}>Bookings</button>
         <button className={`primary-btn ${activeTab === 'users' ? '' : 'outline'}`} onClick={() => setActiveTab('users')}>Users</button>
         <button className={`primary-btn ${activeTab === 'drivers' ? '' : 'outline'}`} onClick={() => setActiveTab('drivers')}>Drivers</button>
@@ -937,7 +936,7 @@ function AdminDashboard({ isAdmin, showToast }) {
                 Phone Number
                 <input type="tel" placeholder="Phone" value={editingDriver.phone} onChange={e => setEditingDriver({...editingDriver, phone: e.target.value})} />
               </label>
-              <div style={{ display: 'flex', gap: '1rem', marginTop: '10px' }}>
+              <div className="booking-action-buttons" style={{ display: 'flex', gap: '1rem', marginTop: '10px' }}>
                 <button type="submit" className="primary-btn form-btn complete-ride-btn" style={{ flex: 1 }}>Update</button>
                 <button type="button" className="primary-btn form-btn cancel-ride-btn" style={{ flex: 1 }} onClick={() => setEditingDriver(null)}>Cancel</button>
               </div>

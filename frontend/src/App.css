@@ -1178,3 +1178,259 @@ body:not(.dark-mode) .admin-driver-form h3 {
   border-bottom-color: #f1f5f9;
 }
 
+/* -------------------------------------------------------------
+   Mobile & Android Responsive Enhancements
+------------------------------------------------------------- */
+@media (max-width: 600px) {
+  /* Layout Padding Adjustments */
+  .main-content {
+    padding: var(--space-16) var(--space-8);
+  }
+  
+  .booking-card {
+    padding: var(--space-16) !important;
+    border-radius: 16px !important;
+  }
+  
+  /* Tabs Navigation (Admin panel & My Booking) */
+  .admin-tabs {
+    flex-wrap: wrap;
+    gap: 8px !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .admin-tabs .primary-btn {
+    flex: 1 1 calc(33.333% - 8px);
+    min-width: 80px;
+    padding: 8px 6px !important;
+    font-size: 11px !important;
+    text-align: center;
+    border-radius: 8px !important;
+  }
+
+  .filter-tabs {
+    gap: 6px !important;
+    margin: 1rem 0 !important;
+  }
+
+  .filter-tabs .primary-btn {
+    padding: 8px 6px !important;
+    font-size: 11px !important;
+    border-radius: 8px !important;
+  }
+
+  /* Booking Item cards responsiveness */
+  .booking-item {
+    padding: 16px !important;
+    border-radius: 16px !important;
+    margin-bottom: 12px;
+  }
+
+  .admin-booking-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+    padding-bottom: 10px;
+    width: 100%;
+  }
+
+  body:not(.dark-mode) .admin-booking-header {
+    border-bottom-color: #f1f5f9;
+  }
+
+  .passenger-info {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .passenger-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .passenger-info h3 {
+    font-size: 14px;
+  }
+
+  .passenger-email {
+    font-size: 11px;
+    word-break: break-all;
+  }
+
+  .admin-booking-header .status-pill {
+    align-self: flex-start;
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+
+  /* Route Flow inside Cards */
+  .admin-booking-route {
+    padding: 10px 12px;
+    gap: 6px;
+  }
+
+  .route-stop {
+    gap: 8px;
+  }
+
+  .route-dot {
+    margin-top: 4px;
+  }
+
+  .route-line-connector {
+    left: 16px;
+    top: 18px;
+    bottom: 18px;
+  }
+
+  .route-label {
+    font-size: 9px;
+  }
+
+  .route-text {
+    font-size: 12px;
+  }
+
+  /* Checklists & Fare details stacking */
+  .admin-booking-checklists .checklist-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .admin-booking-checklists .checklist-item > span:last-child,
+  .admin-booking-checklists .checklist-item .checklist-badges {
+    align-self: stretch;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .completion-badge {
+    font-size: 10px;
+    padding: 4px 8px;
+    flex: 1;
+    text-align: center;
+  }
+
+  .admin-booking-checklists .checklist-item .completion-badge {
+    flex: none;
+    width: auto;
+  }
+
+  /* Assigned/Unassigned Driver UI */
+  .admin-driver-assigned-card, 
+  .admin-driver-unassigned-card {
+    padding: 10px 12px;
+    border-radius: 10px;
+  }
+
+  .driver-visual-info {
+    gap: 8px;
+  }
+
+  .driver-avatar-mini {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .driver-assigned-name {
+    font-size: 13px;
+  }
+
+  .driver-assigned-phone {
+    font-size: 10px;
+  }
+
+  /* Safe touch zones and buttons */
+  .booking-action-buttons {
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100%;
+    margin-top: 12px !important;
+  }
+
+  .booking-action-buttons button {
+    width: 100% !important;
+    padding: 12px !important;
+    font-size: 13px !important;
+    border-radius: 10px !important;
+    height: 48px; /* High fidelity mobile touch target */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Dropdown tap improvements */
+  .driver-assign-trigger {
+    padding: 12px !important;
+    font-size: 13px !important;
+    height: 48px;
+  }
+
+  .driver-assign-dropdown {
+    max-height: 200px;
+  }
+
+  .dropdown-option {
+    padding: 10px 12px;
+  }
+
+  .dropdown-option .option-name {
+    font-size: 12px;
+  }
+
+  .dropdown-option .option-details {
+    font-size: 9px;
+  }
+
+  /* Admin User/Driver Management Rows */
+  .admin-user-row-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .admin-user-row-card > div:last-child {
+    align-self: flex-end;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .admin-user-row-card .edit-driver-row-btn {
+    padding: 8px 16px !important;
+    font-size: 12px !important;
+    height: 40px;
+    border: 1px solid rgba(59, 130, 246, 0.3) !important;
+    background: rgba(59, 130, 246, 0.08) !important;
+    border-radius: 8px !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .admin-user-row-card .delete-user-row-btn {
+    padding: 8px 12px;
+    height: 40px;
+    width: 40px;
+    border-radius: 8px;
+  }
+
+  /* Add/Edit Form Fields */
+  .admin-driver-form {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .admin-driver-form h3 {
+    font-size: 15px;
+  }
+}
+
+
